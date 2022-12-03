@@ -2,17 +2,20 @@
 #include "MainMenu.h"
 #include "SettingsMenu.h"
 #include "CountFunction.h"
+#include "PositionTable.h"
+#include "RotateFunction.h"
 
 CountFunction countFunction;
+PositionTable posTable;
+RotateFunction rotateFunction;
 
 
 LCDMenuItem mainMenuItems[] =
 {
 	{"Settings        ", SettingsMenu::Instance()},
 	{"Splines by count", &countFunction},
-	{"Menu Item 3     ", NULL},
-	{"Menu Item 4     ", NULL},
-	{"Menu Item 5     ", NULL},
+	{"Position Table  ", &posTable},
+	{"Rotate Table    ", &rotateFunction},
 };
 
 LCDMenuDescriptor mainMenuDescriptor =

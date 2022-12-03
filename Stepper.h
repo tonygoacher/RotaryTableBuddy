@@ -21,9 +21,13 @@ public:
 	void SetAcceleration(float acceleration);
 	void SetMaxSpeed(float maxSpeed);
 	bool Running();
+	void PulsePin();
+	void SetDirectionPin(bool forwards);
 private:
 	AccelStepper* m_Stepper;
 	uint8_t m_enablePin;
+	uint8_t m_stepPin;
+	uint8_t m_dirPin;
 
 };
 

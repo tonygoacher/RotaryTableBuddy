@@ -41,6 +41,11 @@ void Switch::SetTimer()
 	m_Timer = millis();
 }
 
+bool Switch::IsDown()
+{
+	return ReadPort();
+}
+
 bool Switch::Pressed()
 {
 	bool pressed = false;

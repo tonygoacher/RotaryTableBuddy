@@ -7,6 +7,7 @@ public:
 	Switch(uint8_t port);
 	void Init(uint8_t port);
 	bool Pressed();
+	bool IsDown();
 private:
 	unsigned long m_Timer;
 	uint8_t m_Port;

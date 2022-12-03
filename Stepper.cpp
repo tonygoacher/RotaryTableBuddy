@@ -9,6 +9,9 @@ Stepper::Stepper(uint8_t stepPin, uint8_t dirPin, uint8_t enablePin)
 	m_enablePin = enablePin;
 	pinMode(m_enablePin, OUTPUT);
 	digitalWrite(m_enablePin, LOW);
+	m_stepPin = stepPin;
+	m_dirPin = dirPin;
+
 }
 
 Stepper::Stepper(uint8_t stepPin, uint8_t dirPin, float speed, float acceleration)
@@ -44,6 +47,19 @@ bool Stepper::Running()
 	return m_Stepper->isRunning();
 }
 
+void Stepper::PulsePin()
+{
+	digitalWrite(m_stepPin, HIGH);
+	delayMicroseconds(4);
+	digitalWrite(m_stepPin, LOW);
+
+}
+
+void Stepper::SetDirectionPin(bool forwards)
+{
+	digitalWrite(m_dirPin, forwards ? HIGH : LOW);
+}
+
 
 void Stepper::Step()
 {
@@ -70,6 +86,11 @@ void Stepper::SetCurrentPos(long newPos)
 float Stepper::GetCurrentSpeed()
 {
 	return m_Stepper->speed();
+}
+
+void Stepper::SetCurrentSpeed(float newSpeed)
+{
+	m_Stepper->setSpeed(newSpeed);
 }
 
 

@@ -109,8 +109,8 @@ void CountFunction::Waiting()
 
 
 CountFunction::CountFunction()
-	: m_nextSwitch(NEXT_SWITCH),
-	m_backwardsSwitch(BACKWARDS_SWITCH)
+: m_nextSwitch(NEXT_SWITCH),
+  m_backwardsSwitch(BACKWARDS_SWITCH)
 {
 
 }

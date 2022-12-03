@@ -43,6 +43,7 @@ void LCDMenu::DoMenu(LCDMenuDescriptor* menuDescriptor)
 			{
 				menuDescriptor->m_menuItems[currentPos].m_menuEntryPoint->menuEntry();
 				// Restore display after last menu
+				m_lcd->clear();
 				m_lcd->setCursor(0, 0);
 				m_lcd->print(menuDescriptor->m_menuItems[currentPos].m_menuItemPrompt);
 				m_menuNavigator->init(menuDescriptor, currentPos);
