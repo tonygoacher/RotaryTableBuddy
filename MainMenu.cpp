@@ -20,7 +20,7 @@ LCDMenuItem mainMenuItems[] =
 
 LCDMenuDescriptor mainMenuDescriptor =
 {
-	5,
+	4,
 	false,
 	mainMenuItems
 };
