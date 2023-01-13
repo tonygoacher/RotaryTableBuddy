@@ -4,7 +4,7 @@
 #include "RotateFunction.h"
 #include "Configuration.h"
 #include "Stepper.h"
-#include "RPi_Pico_TimerInterrupt.h"
+//#include "RPi_Pico_TimerInterrupt.h"
 
 
 RotateFunction::RotateFunction()
@@ -12,7 +12,7 @@ RotateFunction::RotateFunction()
 
 	m_speed = 100;
 }
-
+/*
 
 RPI_PICO_Timer ITimer0(0);
 
@@ -86,4 +86,10 @@ void RotateFunction::menuEntry()
 	} while (exit.Pressed() == false);
 	ITimer0.stopTimer();
 
+}
+
+*/
+
+void RotateFunction::menuEntry()
+{
 }

@@ -2,7 +2,7 @@
 #include <LiquidCrystal_I2C.h>
 #include "IMenuNavigator.h"	
 #include "Switch.h"
-#include <string>
+
 
 class LCDMenuEntryPoint
 {

@@ -21,6 +21,7 @@ public:
 	IMenuNavigator::Navigation getNavigation() override;
 
 private:
+	static const int m_encoderScalar = 2;
 	AiAvrRotaryEncoder* m_rotaryEncoder;
 	Switch* m_selectSwitch;
 	Switch* m_exitSwitch;

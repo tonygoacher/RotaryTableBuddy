@@ -12,15 +12,15 @@ void MenuNavigator::initNavigator(AiAvrRotaryEncoder* rotaryEncoder, Switch* sel
 
 void MenuNavigator::init(LCDMenuDescriptor* menu, int startPos /* =0 */)
 {
-	m_currentMenuSelection = startPos;
+	m_currentMenuSelection = startPos * m_encoderScalar;
 	m_rotaryEncoder->disableAcceleration();
-	m_rotaryEncoder->setBoundaries(0, menu->m_numItems-1, true);
+	m_rotaryEncoder->setBoundaries(0, ((menu->m_numItems-1) * m_encoderScalar) + (m_encoderScalar - 1) , true);
 	m_rotaryEncoder->setEncoderValue(startPos);
 }
 
 int MenuNavigator::getCurrentMenuPos()
 {
-	return m_rotaryEncoder->readEncoder();
+	return m_rotaryEncoder->readEncoder() / m_encoderScalar;
 }
 
 
@@ -34,6 +34,8 @@ IMenuNavigator::Navigation MenuNavigator::getNavigation()
 		{
 		
 			m_currentMenuSelection = (int)m_rotaryEncoder->readEncoder();
+			Serial.print("Encoder ");
+			Serial.println(m_currentMenuSelection);
 		
 			return IMenuNavigator::MENU_CHANGE;
 		}

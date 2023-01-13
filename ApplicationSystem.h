@@ -19,8 +19,18 @@
 #define		PORT_ENABLE		17
 #define		PORT_DIRECTION	16
 
+#define SELECT_SWITCH_PORT  6
+#define EXIT_SWITCH_PORT    14
+
 #define NEXT_SWITCH	12
 #define BACKWARDS_SWITCH	13
+
+#define ROTARY_ENCODER_A_PIN 7
+#define ROTARY_ENCODER_B_PIN 8
+#define ROTARY_ENCODER_BUTTON_PIN -1
+#define ROTARY_ENCODER_VCC_PIN -1
+
+#define ROTARY_ENCODER_STEPS 4
 
 class ApplicationSystem
 {
