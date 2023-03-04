@@ -24,6 +24,7 @@ Switch exitSwitch;
 void setup()
 {
     Serial.begin(115200);
+    Serial.println("Startup");
  
  
     ApplicationSystem::Instance().Init();  // All  the ports and stuff are set in here

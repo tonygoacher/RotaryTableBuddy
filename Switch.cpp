@@ -43,7 +43,7 @@ void Switch::SetTimer()
 
 bool Switch::IsDown()
 {
-	return ReadPort();
+	return m_SwitchState == Switch::PRESSED_HOLD;
 }
 
 bool Switch::Pressed()

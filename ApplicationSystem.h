@@ -6,7 +6,7 @@
 #include "Switch.h"
 #include "LCDMenu.h"
 #include "MenuNavigator.h"
-#include "Stepper.h"
+#include "RTStepper.h"
 
 
 #define MenuSelectSwitch	2
@@ -46,7 +46,7 @@ public:
 	LCDMenu menu;
 	MenuNavigator menuNavigator;
 	static ApplicationSystem& Instance();
-	Stepper m_stepper;
+	RTStepper m_stepper;
 private:
 	void initStepperPorts();
 	static void  readEncoderISR();

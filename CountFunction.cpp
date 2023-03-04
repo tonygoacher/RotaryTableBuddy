@@ -22,14 +22,14 @@ bool CountFunction::setSplineCount()
 	encoder->setEncoderValue(m_splineCount);
 
 	m_lcd->setCursor(0, 0);
-	m_lcd->printf("Spline Count %d", m_splineCount);
+	m_lcd->printf("Spline Count %*3d", 3,m_splineCount);
 	do
 	{
 		if (encoder->encoderChanged())
 		{
 			m_splineCount = encoder->readEncoder();
 			m_lcd->setCursor(0, 0);
-			m_lcd->printf("Spline Count %d", m_splineCount);
+			m_lcd->printf("Spline Count %*d", 3,m_splineCount);
 		}
 		selectPressed = ApplicationSystem::Instance().m_selectSwitch.Pressed();
 		exitPressed = ApplicationSystem::Instance().m_exitSwitch.Pressed();
