@@ -66,9 +66,9 @@ void CountFunction::Waiting()
 		bool backwardsSwitchPressed = false;
 		do
 		{
-			nextSwitchPressed = m_nextSwitch.Pressed();
+			nextSwitchPressed = m_nextSwitch.IsDown();
 			exitSwitchPressed = ApplicationSystem::Instance().m_exitSwitch.Pressed();
-			backwardsSwitchPressed = m_backwardsSwitch.Pressed();
+			backwardsSwitchPressed = m_backwardsSwitch.IsDown();
 		} while (nextSwitchPressed == false && exitSwitchPressed == false && backwardsSwitchPressed == false);
 
 		if (exitSwitchPressed)
